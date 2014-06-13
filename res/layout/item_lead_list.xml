@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<TableLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:shrinkColumns="*"  android:stretchColumns="*" android:background="#ffffff">
+
+    <TableRow>
+        <TextView android:id="@+id/id" android:text="1-2, 1;\t" android:layout_gravity="center" android:layout_width="0dp" android:layout_weight="1" />
+        <TableLayout android:layout_weight="3" android:layout_width="0dp" android:layout_gravity="left">
+            <TableRow>
+                <TextView android:id="@+id/name" android:text="1, 2;\t" android:layout_gravity="left" />
+                <TextView android:id="@+id/telNo" android:text="2, 2;\t" android:layout_gravity="left" />
+            </TableRow>
+            <TableRow>
+                <TextView android:id="@+id/address" android:text="2, 2;\t" android:layout_gravity="left" />
+            </TableRow>
+        </TableLayout>
+    </TableRow>
+</TableLayout>

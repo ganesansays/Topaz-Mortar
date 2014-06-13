@@ -7,11 +7,11 @@ import butterknife.ButterKnife.Finder;
 public class LoginView$$ViewInjector {
   public static void inject(Finder finder, final com.example.mortar.view.LoginView target, Object source) {
     View view;
-    view = finder.findRequiredView(source, 2131034163, "field 'userName'");
+    view = finder.findRequiredView(source, 2131034167, "field 'userName'");
     target.userName = (android.widget.TextView) view;
-    view = finder.findRequiredView(source, 2131034164, "field 'password'");
+    view = finder.findRequiredView(source, 2131034168, "field 'password'");
     target.password = (android.widget.TextView) view;
-    view = finder.findRequiredView(source, 2131034165, "field 'login' and method 'loginClicked'");
+    view = finder.findRequiredView(source, 2131034169, "field 'login' and method 'loginClicked'");
     target.login = (android.widget.Button) view;
     view.setOnClickListener(
       new android.view.View.OnClickListener() {

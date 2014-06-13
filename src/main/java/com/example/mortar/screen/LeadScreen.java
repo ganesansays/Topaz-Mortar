@@ -66,6 +66,8 @@ public class LeadScreen implements HasParent<LeadListScreen>, Blueprint {
             super.onLoad(savedInstanceState);
             LeadView view = getView();
             if (view == null) return;
+
+            view.showDetails(lead);
         }
     }
 }

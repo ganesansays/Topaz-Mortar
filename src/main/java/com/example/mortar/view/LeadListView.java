@@ -18,11 +18,15 @@ package com.example.mortar.view;
 
 import android.content.Context;
 import android.util.AttributeSet;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 
+import com.example.mortar.R;
 import com.example.mortar.model.Lead;
 import com.example.mortar.screen.LeadListScreen;
 
@@ -67,6 +71,28 @@ public class LeadListView extends ListView {
     private static class Adapter extends ArrayAdapter<Lead> {
         public Adapter(Context context, List<Lead> objects) {
             super(context, android.R.layout.simple_list_item_1, objects);
+        }
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+            // Get the data item for this position
+            Lead lead = getItem(position);
+            // Check if an existing view is being reused, otherwise inflate the view
+            if (convertView == null) {
+                convertView = LayoutInflater.from(getContext()).inflate(R.layout.item_lead_list, parent, false);
+            }
+            // Lookup view for data population
+            TextView id = (TextView) convertView.findViewById(R.id.id);
+            TextView name = (TextView) convertView.findViewById(R.id.name);
+            TextView telNo = (TextView) convertView.findViewById(R.id.telNo);
+            TextView address = (TextView) convertView.findViewById(R.id.address);
+            // Populate the data into the template view using the data object
+            id.setText(lead.id);
+            name.setText(lead.name);
+            telNo.setText(lead.telNo);
+            address.setText(lead.address);
+            // Return the completed view to render on screen
+            return convertView;
         }
     }
 }

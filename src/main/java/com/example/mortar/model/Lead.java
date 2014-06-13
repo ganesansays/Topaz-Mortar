@@ -4,10 +4,10 @@ package com.example.mortar.model;
  * Created by Ganesan_Gurumurthy on 6/13/2014.
  */
 public class Lead {
-    private String id;
-    private String name;
-    private String telNo;
-    private String address;
+    public String id;
+    public String name;
+    public String telNo;
+    public String address;
 
     public Lead(
             String id,

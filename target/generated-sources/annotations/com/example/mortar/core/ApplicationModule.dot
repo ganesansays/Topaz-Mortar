@@ -1,7 +1,7 @@
 digraph G1 {
   concentrate = true;
-  Login -> Executor;
   Login -> LoginService;
+  Login -> Executor;
   n2 [label="@MainThread Scheduler"];
   Login -> n2;
   n3 [label="Parcer<java.lang.Object>"];

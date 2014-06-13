@@ -3,8 +3,8 @@ digraph G1 {
   DemoActivity -> ActionBarOwner;
   n2 [label="Main$Presenter"];
   Flow -> n2;
-  Login -> Executor;
   Login -> LoginService;
+  Login -> Executor;
   n3 [label="@MainThread Scheduler"];
   Login -> n3;
   n2 -> ActionBarOwner;

@@ -3,12 +3,16 @@ package com.example.mortar.view;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
+import com.example.mortar.R;
+import com.example.mortar.model.Lead;
 import com.example.mortar.screen.LeadScreen;
 
 import javax.inject.Inject;
 
 import butterknife.ButterKnife;
+import butterknife.InjectView;
 import mortar.Mortar;
 
 /**
@@ -16,6 +20,8 @@ import mortar.Mortar;
  */
 public class LeadView extends LinearLayout {
     @Inject LeadScreen.Presenter presenter;
+
+    @InjectView(R.id.id) TextView id;
 
     public LeadView(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -32,5 +38,9 @@ public class LeadView extends LinearLayout {
     @Override protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         presenter.dropView(this);
+    }
+
+    public void showDetails(Lead lead) {
+        this.id.setText(lead.toString());
     }
 }

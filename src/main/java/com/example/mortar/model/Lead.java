@@ -25,6 +25,6 @@ public class Lead {
         return "ID: " + id + "\n"
                 + "Name: " + name + "\n"
                 + "Tel No: " + telNo + "\n"
-                + "Address : " + address;
+                + "Address : " + address + "\n";
     }
 }

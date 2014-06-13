@@ -1,0 +1,19 @@
+digraph G1 {
+  concentrate = true;
+  Chats -> Executor;
+  Chats -> QuoteService;
+  n2 [label="@MainThread Scheduler"];
+  Chats -> n2;
+  DemoActivity -> ActionBarOwner;
+  n3 [label="Main$Presenter"];
+  Flow -> n3;
+  n4 [label="FriendScreen$Presenter"];
+  n4 -> User;
+  FriendView -> n4;
+  n5 [label="Parcer<java.lang.Object>"];
+  n3 -> n5;
+  n3 -> ActionBarOwner;
+  MainView -> n3;
+  n5 -> Gson;
+  User -> Chats;
+}

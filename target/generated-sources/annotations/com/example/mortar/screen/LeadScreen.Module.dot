@@ -1,0 +1,23 @@
+digraph G1 {
+  concentrate = true;
+  DemoActivity -> ActionBarOwner;
+  n2 [label="Main$Presenter"];
+  Flow -> n2;
+  Lead -> Leads;
+  n3 [label="LeadScreen$Presenter"];
+  n3 -> Lead;
+  n3 -> Flow;
+  LeadView -> n3;
+  Leads -> LeadService;
+  Leads -> Executor;
+  n4 [label="@MainThread Scheduler"];
+  Leads -> n4;
+  Login -> LoginService;
+  Login -> Executor;
+  Login -> n4;
+  n2 -> ActionBarOwner;
+  n5 [label="Parcer<java.lang.Object>"];
+  n2 -> n5;
+  MainView -> n2;
+  n5 -> Gson;
+}

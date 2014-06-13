@@ -1,0 +1,9 @@
+digraph G1 {
+  concentrate = true;
+  Login -> Executor;
+  Login -> LoginService;
+  n2 [label="@MainThread Scheduler"];
+  Login -> n2;
+  n3 [label="Parcer<java.lang.Object>"];
+  n3 -> Gson;
+}

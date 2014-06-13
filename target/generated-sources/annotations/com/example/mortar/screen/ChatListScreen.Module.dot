@@ -1,0 +1,21 @@
+digraph G1 {
+  concentrate = true;
+  n2 [label="ChatListScreen$Presenter"];
+  n2 -> Flow;
+  n3 [label="List<com.example.mortar.model.Chat>"];
+  n2 -> n3;
+  ChatListView -> n2;
+  Chats -> Executor;
+  n4 [label="@MainThread Scheduler"];
+  Chats -> n4;
+  Chats -> QuoteService;
+  DemoActivity -> ActionBarOwner;
+  n5 [label="Main$Presenter"];
+  Flow -> n5;
+  n3 -> Chats;
+  n6 [label="Parcer<java.lang.Object>"];
+  n5 -> n6;
+  n5 -> ActionBarOwner;
+  MainView -> n5;
+  n6 -> Gson;
+}

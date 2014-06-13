@@ -1,0 +1,24 @@
+digraph G1 {
+  concentrate = true;
+  DemoActivity -> ActionBarOwner;
+  n2 [label="Main$Presenter"];
+  Flow -> n2;
+  n3 [label="LeadListScreen$Presenter"];
+  n3 -> Flow;
+  n4 [label="List<com.example.mortar.model.Lead>"];
+  n3 -> n4;
+  LeadListView -> n3;
+  Leads -> LeadService;
+  Leads -> Executor;
+  n5 [label="@MainThread Scheduler"];
+  Leads -> n5;
+  n4 -> Leads;
+  Login -> Executor;
+  Login -> LoginService;
+  Login -> n5;
+  n6 [label="Parcer<java.lang.Object>"];
+  n2 -> n6;
+  n2 -> ActionBarOwner;
+  MainView -> n2;
+  n6 -> Gson;
+}

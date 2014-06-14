@@ -27,7 +27,7 @@
   <uses-permission android:name="android.permission.INTERNET" />
 
   <application
-      android:label="Mortar"
+      android:label="Topaz"
       android:icon="@drawable/mortar_icon"
       android:name=".DemoApplication"
       >

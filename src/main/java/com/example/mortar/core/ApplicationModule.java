@@ -20,6 +20,7 @@ import android.os.Looper;
 
 import com.example.mortar.model.Login;
 import com.example.mortar.repository.LeadService;
+import com.example.mortar.repository.CustomerService;
 import com.example.mortar.repository.LoginService;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -71,5 +72,13 @@ public class ApplicationModule {
             .setConverter(new GsonConverter(new Gson()))
             .build();
         return restAdapter.create(LeadService.class);
-    }
+  }
+  @Provides @Singleton
+  CustomerService provideCustomerService() {
+        RestAdapter restAdapter =
+                new RestAdapter.Builder().setServer("http://localhost/api/")
+                        .setConverter(new GsonConverter(new Gson()))
+                        .build();
+        return restAdapter.create(CustomerService.class);
+  }
 }

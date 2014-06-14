@@ -8,14 +8,14 @@ digraph G1 {
   n3 -> n4;
   n3 -> Flow;
   LeadListView -> n3;
-  Leads -> Executor;
-  Leads -> LeadService;
   n5 [label="@MainThread Scheduler"];
   Leads -> n5;
+  Leads -> LeadService;
+  Leads -> Executor;
   n4 -> Leads;
   Login -> LoginService;
-  Login -> Executor;
   Login -> n5;
+  Login -> Executor;
   n2 -> ActionBarOwner;
   n6 [label="Parcer<java.lang.Object>"];
   n2 -> n6;

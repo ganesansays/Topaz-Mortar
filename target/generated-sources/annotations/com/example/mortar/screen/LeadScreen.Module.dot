@@ -8,16 +8,16 @@ digraph G1 {
   n3 -> Lead;
   n3 -> Flow;
   LeadView -> n3;
+  Leads -> Executor;
   n4 [label="@MainThread Scheduler"];
   Leads -> n4;
   Leads -> LeadService;
-  Leads -> Executor;
-  Login -> LoginService;
-  Login -> n4;
   Login -> Executor;
-  n2 -> ActionBarOwner;
+  Login -> n4;
+  Login -> LoginService;
   n5 [label="Parcer<java.lang.Object>"];
   n2 -> n5;
+  n2 -> ActionBarOwner;
   MainView -> n2;
   n5 -> Gson;
 }

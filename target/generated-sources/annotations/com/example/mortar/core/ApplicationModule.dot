@@ -1,9 +1,9 @@
 digraph G1 {
   concentrate = true;
   Login -> LoginService;
-  Login -> Executor;
   n2 [label="@MainThread Scheduler"];
   Login -> n2;
+  Login -> Executor;
   n3 [label="Parcer<java.lang.Object>"];
   n3 -> Gson;
 }

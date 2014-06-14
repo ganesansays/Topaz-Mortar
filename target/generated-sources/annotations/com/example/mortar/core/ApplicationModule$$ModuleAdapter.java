@@ -38,6 +38,7 @@ public final class ApplicationModule$$ModuleAdapter extends ModuleAdapter<Applic
     map.put("flow.Parcer<java.lang.Object>", new ProvideParcerProvidesAdapter(module));
     map.put("com.example.mortar.repository.LoginService", new ProvideLoginServiceProvidesAdapter(module));
     map.put("com.example.mortar.repository.LeadService", new ProvideLeadServiceProvidesAdapter(module));
+    map.put("com.example.mortar.repository.CustomerService", new ProvideCustomerServiceProvidesAdapter(module));
   }
 
   /**
@@ -195,6 +196,33 @@ public final class ApplicationModule$$ModuleAdapter extends ModuleAdapter<Applic
     @Override
     public com.example.mortar.repository.LeadService get() {
       return module.provideLeadService();
+    }
+  }
+
+  /**
+   * A {@code Binder<com.example.mortar.repository.CustomerService>} implementation which satisfies
+   * Dagger's infrastructure requirements including:
+   * 
+   * Being a {@code Provider<com.example.mortar.repository.CustomerService>} and handling creation and
+   * preparation of object instances.
+   */
+  public static final class ProvideCustomerServiceProvidesAdapter extends Binding<com.example.mortar.repository.CustomerService>
+      implements Provider<com.example.mortar.repository.CustomerService> {
+    private final ApplicationModule module;
+
+    public ProvideCustomerServiceProvidesAdapter(ApplicationModule module) {
+      super("com.example.mortar.repository.CustomerService", null, IS_SINGLETON, "com.example.mortar.core.ApplicationModule.provideCustomerService()");
+      this.module = module;
+      setLibrary(true);
+    }
+
+    /**
+     * Returns the fully provisioned instance satisfying the contract for
+     * {@code Provider<com.example.mortar.repository.CustomerService>}.
+     */
+    @Override
+    public com.example.mortar.repository.CustomerService get() {
+      return module.provideCustomerService();
     }
   }
 }

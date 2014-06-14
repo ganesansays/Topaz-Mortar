@@ -11,9 +11,9 @@ digraph G1 {
   n4 -> Login;
   n4 -> Flow;
   LoginView -> n4;
+  n2 -> ActionBarOwner;
   n5 [label="Parcer<java.lang.Object>"];
   n2 -> n5;
-  n2 -> ActionBarOwner;
   MainView -> n2;
   n5 -> Gson;
 }
